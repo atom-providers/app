@@ -20,8 +20,6 @@ const (
 	AppModeRelease AppMode = "release"
 	// AppModeTest is a AppMode of type test.
 	AppModeTest AppMode = "test"
-	// AppModeProduct is a AppMode of type product.
-	AppModeProduct AppMode = "product"
 )
 
 var ErrInvalidAppMode = fmt.Errorf("not a valid AppMode, try [%s]", strings.Join(_AppModeNames, ", "))
@@ -30,7 +28,6 @@ var _AppModeNames = []string{
 	string(AppModeDevelopment),
 	string(AppModeRelease),
 	string(AppModeTest),
-	string(AppModeProduct),
 }
 
 // AppModeNames returns a list of possible string values of AppMode.
@@ -46,7 +43,6 @@ func AppModeValues() []AppMode {
 		AppModeDevelopment,
 		AppModeRelease,
 		AppModeTest,
-		AppModeProduct,
 	}
 }
 
@@ -66,7 +62,6 @@ var _AppModeValue = map[string]AppMode{
 	"development": AppModeDevelopment,
 	"release":     AppModeRelease,
 	"test":        AppModeTest,
-	"product":     AppModeProduct,
 }
 
 // ParseAppMode attempts to convert a string to a AppMode.

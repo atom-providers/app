@@ -17,13 +17,26 @@ func DefaultProvider() container.ProviderContainer {
 }
 
 // swagger:enum AppMode
-// ENUM(development, release, test, product)
+// ENUM(development, release, test)
 type AppMode string
 
 type Config struct {
 	Mode AppMode
 	Cert *Cert
 }
+
+func (c *Config) IsDevMode() bool {
+	return c.Mode == "development"
+}
+
+func (c *Config) IsReleaseMode() bool {
+	return c.Mode == "release"
+}
+
+func (c *Config) IsTestMode() bool {
+	return c.Mode == "test"
+}
+
 type Cert struct {
 	CA   string
 	Cert string

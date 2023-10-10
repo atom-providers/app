@@ -26,15 +26,15 @@ type Config struct {
 }
 
 func (c *Config) IsDevMode() bool {
-	return c.Mode == "development"
+	return c.Mode == AppModeDevelopment
 }
 
 func (c *Config) IsReleaseMode() bool {
-	return c.Mode == "release"
+	return c.Mode == AppModeRelease
 }
 
 func (c *Config) IsTestMode() bool {
-	return c.Mode == "test"
+	return c.Mode == AppModeTest
 }
 
 type Cert struct {

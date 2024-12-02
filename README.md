@@ -1,2 +1,0 @@
-# app 
-global config provider
